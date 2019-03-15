@@ -18,6 +18,10 @@ For more information, see [Docker Basics for Amazon ECR](https://docs.aws.amazon
 ### How to run
 
 1. Open `build.gradle` file and change `jib.to.image` to your ecr registry address.
-2. Run `./gradlew clean build jib` in root directory.
+2. If your registry is not in us-east-2 region change region in `jib.to.auth.password` field.
+3. If you have more than one profiles in the `~/.aws/credentials` file you should specify which one you want to use by adding to `jib.to.auth.password` field `--profile` parameter. 
+4. Run `./gradlew clean build jib` in root directory.
 
-And thats it! After gradle build will finished successufully you should be able to see builded image in ecr registry.
+#### And thats it! 
+
+After gradle build will be finished successfully you should be able to see builded image in ecr registry.
